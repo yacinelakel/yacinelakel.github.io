@@ -5,7 +5,7 @@ Remove-Item "main.*.js"
 $id = New-Guid;
 $mainFile = "main." + $id + ".js"
 <#Run elm make #>
-$elmMake = "elm make src\Main.elm --output=" + $mainFile;
+$elmMake = "elm make src\Main.elm --optimize --output=" + $mainFile;
 Invoke-Expression $elmMake 
 
 <#Update index.html#>
